@@ -1,10 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify";
 import { deductUserBalance } from '../services/userService';
-
-interface RequestBody {
-    userId: number;
-    amount: number;
-}
+import {RequestBody} from "../model/requestBody";
 
 export async function deductUserBalanceHandler(request: FastifyRequest<{ Body: RequestBody }>, reply: FastifyReply) {
     const { userId, amount } = request.body;

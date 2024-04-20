@@ -1,5 +1,5 @@
 import request from 'supertest';
-import fastify, { FastifyInstance } from 'fastify';
+import fastify, {FastifyInstance} from 'fastify';
 import itemRoutes from './itemRoutes';
 
 const app: FastifyInstance = fastify();

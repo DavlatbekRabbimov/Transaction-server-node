@@ -1,6 +1,7 @@
 import pool from '../config/database';
-import { User } from '../model/user';
+import {User} from '../model/user';
 import {SELECT_USER, UPDATE_USER_BALANCE} from "../sql/queries";
+
 export async function deductUserBalance(userId: number, amount: number) {
     const client = await pool.connect();
     try {

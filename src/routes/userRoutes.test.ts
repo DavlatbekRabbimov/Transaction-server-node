@@ -18,7 +18,7 @@ describe('POST /users/deduct-balance', () => {
 
         const response = await request(app.server)
             .post('/users/deduct-balance')
-            .send({ userId, amount });
+            .send({userId, amount});
 
         expect(response.status).toBe(200);
         expect(response.body.message).toBe(`Success: Amount: $${amount} was deducted from balance!`);
@@ -30,7 +30,7 @@ describe('POST /users/deduct-balance', () => {
 
         const response = await request(app.server)
             .post('/users/deduct-balance')
-            .send({ userId, amount });
+            .send({userId, amount});
 
         expect(response.status).toBe(400);
         expect(response.body.error).toBe('Insufficient balance');
