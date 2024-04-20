@@ -8,4 +8,4 @@
 
 ### ENDOINT-2: https://transaction-server-node.onrender.com/users/deduct-balance
 ** deduct_balance **
-![balance](https://github.com/DavlatbekRabbimov/Transaction-server-node/assets/110993036/7a01ebe1-584d-465e-888b-997a229dee43)
+![balance](https://github.com/DavlatbekRabbimov/Transaction-server-node/assets/110993036/c681dd35-4e69-4ed7-85df-0393ef09ace0)
