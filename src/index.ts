@@ -26,9 +26,10 @@ migrate({
     },
 }).then(() => {
     const options = {
-        port: Number(port)
+        port: Number(port),
+        host: '0.0.0.0'
     };
     app.listen(options, () => {
-        console.log(`Server listening on port http://localhost:${port}`)
+        console.log(`Server listening on port http://0.0.0.0:${port}`)
     })
 });
