@@ -1,5 +1,5 @@
-import { getItems } from '../services/itemService';
-import { FastifyRequest, FastifyReply } from "fastify";
+import {getItems} from '../services/itemService';
+import {FastifyRequest, FastifyReply} from "fastify";
 
 export async function getItemsHandler(request: FastifyRequest, reply: FastifyReply) {
     try {
@@ -7,6 +7,6 @@ export async function getItemsHandler(request: FastifyRequest, reply: FastifyRep
         reply.send(items);
     } catch (error) {
         const err = error as Error;
-        reply.status(500).send({ error: 'Internal Server Error', message: err.message });
+        reply.status(500).send({error: 'Internal Server Error', message: err.message});
     }
 }
