@@ -3,7 +3,7 @@ exports.up = (pgm) => {
         id: 'id',
         balance: { type: 'numeric', notNull: true, default: 0 },
     });
-    pgm.sql("INSERT INTO users (id, balance) VALUES (1, 1000.00)");
+    pgm.sql("INSERT INTO users (id, balance) VALUES (1, 10000.00)");
 };
 
 exports.down = (pgm) => {

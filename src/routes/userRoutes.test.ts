@@ -26,7 +26,7 @@ describe('POST /users/deduct-balance', () => {
 
     it('should return error when balance is insufficient', async () => {
         const userId = 1;
-        const amount = 10000;
+        const amount = 100000;
 
         const response = await request(app.server)
             .post('/users/deduct-balance')
