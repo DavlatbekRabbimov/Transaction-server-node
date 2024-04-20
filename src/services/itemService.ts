@@ -17,6 +17,7 @@ function createItem(marketHashName: string, minPrice: number | null) {
 }
 
 export async function getItems() {
+
     const url = 'https://api.skinport.com/v1/items';
     const params = {app_id: 730, currency: 'USD'};
 
@@ -25,9 +26,7 @@ export async function getItems() {
         const items = response.data;
 
         return items.reduce((acc: any[], item: any) => {
-            const minPrice = item.min_price;
-            const marketHashName = item.market_hash_name;
-            const newItem = createItem(marketHashName, minPrice);
+            const newItem = createItem(item.market_hash_name, item.min_price);
             acc.push(newItem);
             return acc;
         }, []);
