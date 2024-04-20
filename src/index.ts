@@ -2,11 +2,16 @@ import Fastify from 'fastify';
 import itemRoutes from './routes/itemRoutes';
 import userRoutes from './routes/userRoutes';
 import migrate from 'node-pg-migrate';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = Fastify();
 
 app.register(itemRoutes);
 app.register(userRoutes);
+
+const port = process.env.PORT || 3000;
 
 migrate({
     direction: 'up',
@@ -20,11 +25,10 @@ migrate({
         password: process.env.DB_PASSWORD,
     },
 }).then(() => {
-    app.listen({port: 8181}, (err, address) => {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        console.log(`Server listening at ${address}`);
-    });
+    const options = {
+        port: Number(port)
+    };
+    app.listen(options, () => {
+        console.log(`Server listening on port http://localhost:${port}`)
+    })
 });
